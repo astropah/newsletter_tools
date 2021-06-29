@@ -15,4 +15,7 @@ def get_yaml_data(filepath: str) -> Dict[str, str]:
 
 
 def extract_authors(author_list: str) -> List[str]:
-    return author_list.split(";")
+    authors = author_list.split(";")
+    # remove white space before and after names
+    authors = [author.strip() for author in authors]
+    return authors
